@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Test_1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/delete_biao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="delete_biao" />
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="create" />
+
+        <Button
+            android:id="@+id/add_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="add_log" />
+
+        <Button
+            android:id="@+id/add_log_numbertoinformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="add_log_numbertoinformation" />
+
+        <Button
+            android:id="@+id/query"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="query" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
