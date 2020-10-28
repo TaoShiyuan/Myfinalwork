@@ -14,37 +14,41 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.myfinalwork.DBHelper;
+import com.example.myfinalwork.MainActivity;
 import com.example.myfinalwork.MyActivityFragment;
 import com.example.myfinalwork.R;
-
 import static com.example.myfinalwork.ui.login.LoginActivity.xuehao;
 
 
 public class Jitashe extends AppCompatActivity {
     private DBHelper dbHelper;
     private SQLiteDatabase db;
-    public static int chengyuangeshu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jitashe);
+        //创建个人信息数据库
         dbHelper = new DBHelper(this, "MyFinalWork.db", null, 1);
-        //统计一共有多少成员加入吉他社
-//        SQLiteDatabase db = dbHelper.getWritableDatabase();
-//        Cursor cursor = db.rawQuery("select count(number) from JITA_INFORMATION", null);
-//        cursor.moveToFirst();
-//        chengyuangeshu = cursor.getInt(0);
-//        cursor.close();
-//        db.close();
-//        TextView geshu = findViewById(R.id.textView6);
-//        geshu.setText(chengyuangeshu);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        int count=0;
+        //将所有数据库中的信息取出存入成员名单retList中在listview逐条中显示
+        Cursor cursor1 = db.query("JITA_INFORMATION", null, null, null, null, null, null);
+        if (cursor1.moveToFirst()) {
+            do {
+                count++;
+            } while (cursor1.moveToNext());
+        }
+        //统计成员个数显示在texeview中
+        TextView chengyuan=findViewById(R.id.textView6);
+        String count1=String.valueOf(count);
+        chengyuan.setText(count1);
 //跳转回社团主页面
         Button fanhui = findViewById(R.id.fanhui);
         fanhui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Jitashe.this, MyActivityFragment.class);
+                Intent intent = new Intent(Jitashe.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -68,12 +72,16 @@ public class Jitashe extends AppCompatActivity {
                     do {
                         String number = cursor.getString(cursor.getColumnIndex("number"));
                         String name = cursor.getString(cursor.getColumnIndex("name"));
+                        String shetuan=cursor.getString(cursor.getColumnIndex("shetuan_1"));
                         if (number.equals(xuehao)) {
+                            //将学生信息加入JITA_INFORMATION中
                             ContentValues values = new ContentValues();
-
                             values.put("number", number);
                             values.put("name", name);
                             db.insert("JITA_INFORMATION", null, values);
+                            //将社团信息加入INFORMATION中,取出来再用split逗号分割放到个人信息的listview中
+                            String shetuan1=shetuan+",吉他社";
+                            db.execSQL("update INFORMATION set shetuan_1='"+shetuan1+"' where number='"+number+"'");
                             db.close();
                         }
                     } while (cursor.moveToNext());

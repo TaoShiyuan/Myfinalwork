@@ -61,7 +61,7 @@ public class Test_1 extends AppCompatActivity {
                 ContentValues values=new ContentValues();
                 //  db.execSQL("insert into LOGIN(number,password) values(?, ?)", new Object[]{"41710075", "123456"});
 //                db.execSQL("drop table INFORMATION");
-                values.put("number","2");
+                values.put("number","3");
                 values.put("password","123456");
                 db.insert("LOGIN",null,values);
                 db.close();

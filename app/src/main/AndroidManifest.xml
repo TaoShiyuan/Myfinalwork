@@ -24,7 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ui.home.Home_chuanzhi">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,28 +36,7 @@
         <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
         <!-- </intent-filter> -->
         <!-- </activity> -->
-        <activity android:name=".jitashe.Jita_jinnian">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".jitashe.Jita_zaixiao">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".jitashe.Jita_chengyuanzongji">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".jitashe.Jita_fuzeren">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -79,13 +57,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.gallery.guanzhuOrNot">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".ui.gallery.GuanzhuOrNot">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.login.LoginActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"

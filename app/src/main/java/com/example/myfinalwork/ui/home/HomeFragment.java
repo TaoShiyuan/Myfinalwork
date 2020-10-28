@@ -104,37 +104,42 @@ public class HomeFragment extends Fragment {
         }
 
 //返回到主页面
-        fanhui= (Button) getActivity().findViewById(R.id.fanhui);
-        fanhui.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent intent;
-            intent=new Intent(getActivity(), MainActivity.class);
-            startActivity(intent);
-            }
-        });
+//        fanhui= (Button) getActivity().findViewById(R.id.fanhui);
+//        fanhui.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//                Intent intent;
+//            intent=new Intent(getActivity(), MainActivity.class);
+//            startActivity(intent);
+//            }
+//        });
 //个人信息页面里显示加入社团信息
         //与页面布局文件中的listview关联
         mylistview = (ListView) getActivity().findViewById(R.id.list_shetuan);
         //将所有数据库中的信息取出存入成员名单retList中在listview逐条中显示
-        Cursor cursor2 = db.query("JINFORMATION", null, null, null, null, null, null);
+        Cursor cursor2 = db.query("INFORMATION", null, null, null, null, null, null);
         if (cursor2.moveToFirst()) {
             do {
                 HashMap<String, String> map = new HashMap<String, String>();
-                String number = cursor2.getString(cursor1.getColumnIndex("number"));
-                String shetuan = cursor1.getString(cursor1.getColumnIndex("shetuan"));
+                String number = cursor2.getString(cursor2.getColumnIndex("number"));
+                String shetuan = cursor2.getString(cursor2.getColumnIndex("shetuan_1"));
                 if(number.equals(xuehao)){
-                    map.put("shetuan", shetuan);
-                    retList.add(map);
+                    String[] result = shetuan.split(",");
+                    for (int i = 0; i < result.length; i++) {
+                        System.out.println(result[i]);
+                        map.put("shetuan", result[i]);
+                        retList.add(map);
+                    }
+
                 }
 
-            } while (cursor1.moveToNext());
+            } while (cursor2.moveToNext());
         }
         listItemAdapter = new SimpleAdapter(getActivity(), retList, //listItem数据源
-                R.layout.list_chengyuan,
+                R.layout.list_shetuan,
                 //ListItem的XML布局实现
-                new String[]{"name"},
+                new String[]{"shetuan"},
                 //数据的key
                 new int[]{R.id.shetuan}//布局里的id，k与id一一匹配
         );

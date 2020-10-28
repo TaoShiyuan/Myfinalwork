@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,7 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.myfinalwork.jitashe.Jitashe;
+import com.example.myfinalwork.MainActivity;
 import com.example.myfinalwork.R;
 
 public class GalleryFragment extends Fragment {
@@ -51,10 +52,22 @@ public class GalleryFragment extends Fragment {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent;
-                intent=new Intent(getActivity(), guanzhuOrNot.class);
+                intent=new Intent(getActivity(), GuanzhuOrNot.class);
                 startActivity(intent);
             }
         });
+
+        //返回到主页面
+//        Button fanhui= (Button) getActivity().findViewById(R.id.fanhui);
+//        fanhui.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//                Intent intent;
+//                intent=new Intent(getActivity(), MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
 
