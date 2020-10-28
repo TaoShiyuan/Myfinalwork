@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="650dp"
         android:layout_marginLeft="650dp"
-        android:layout_marginTop="880dp"
+        android:layout_marginTop="830dp"
         android:text="1"
         android:textColor="#E603A9F4"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
@@ -104,7 +104,7 @@
             android:layout_width="168dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="280dp"
-            android:text="吉他社"
+            android:text="舞蹈社"
             android:textColor="#000000"
             android:textSize="25sp" />
 
@@ -121,7 +121,7 @@
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine"
-            android:text="吉他社，西财最大的音乐社团，一直秉承积极传播独立原创理念、现场音乐文化的理念，聚集了众多热爱音乐的伙伴" />
+            android:text="推动校园文化发展,丰富校园学生文艺舞台及我校师生课余生活" />
 
         <TextView
             android:id="@+id/textView2"

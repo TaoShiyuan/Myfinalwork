@@ -35,9 +35,9 @@ public class HomeFragment extends Fragment {
     private LoginViewModel loginViewModel;
     private DBHelper dbHelper;
     private HomeViewModel homeViewModel;
-    private ImageView touxiang ;
-    private Button fanhui,tijiao;
-    private EditText name1,sex1,age1,major1;
+    private ImageView touxiang;
+    private Button fanhui, tijiao;
+    private EditText name1, sex1, age1, major1;
     View root;
     List<HashMap<String, String>> retList = new ArrayList<HashMap<String, String>>();
     ListView mylistview;
@@ -47,42 +47,43 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         root = inflater.inflate(R.layout.fragment_home, container, false);
-        touxiang=root.findViewById(R.id.imageView2);
+        touxiang = root.findViewById(R.id.imageView2);
         //传值
         return root;
     }
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
         //获取输入数据
-        name1=root.findViewById(R.id.name1);
-        sex1=root.findViewById(R.id.sex1);
-        age1=root.findViewById(R.id.age1);
-        major1=root.findViewById(R.id.major1);
+        name1 = root.findViewById(R.id.name1);
+        sex1 = root.findViewById(R.id.sex1);
+        age1 = root.findViewById(R.id.age1);
+        major1 = root.findViewById(R.id.major1);
         //点击修改并提交按钮跳转到Home_chuanzhi页面，连接数据库保存数据
-        tijiao=root.findViewById(R.id.tijiao);
+        tijiao = root.findViewById(R.id.tijiao);
         tijiao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent;
-                intent=new Intent(getActivity(), Home_chuanzhi.class);
-                Bundle bundle=new Bundle();
-                String name=name1.getText().toString();
-                String sex=sex1.getText().toString();
-                String age=age1.getText().toString();
-                String major=major1.getText().toString();
-                bundle.putString("name",name);
-                bundle.putString("sex",sex);
-                bundle.putString("age",age);
-                bundle.putString("major",major);
+                intent = new Intent(getActivity(), Home_chuanzhi.class);
+                Bundle bundle = new Bundle();
+                String name = name1.getText().toString();
+                String sex = sex1.getText().toString();
+                String age = age1.getText().toString();
+                String major = major1.getText().toString();
+                bundle.putString("name", name);
+                bundle.putString("sex", sex);
+                bundle.putString("age", age);
+                bundle.putString("major", major);
                 intent.putExtras(bundle);
-                startActivityForResult(intent,2);
+                startActivityForResult(intent, 2);
             }
         });
         //导入数据库
-        dbHelper = new DBHelper(getActivity(),"MyFinalWork.db",null,1);
+        dbHelper = new DBHelper(getActivity(), "MyFinalWork.db", null, 1);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
 //在INFORMATION里查找用户相关信息
@@ -93,8 +94,8 @@ public class HomeFragment extends Fragment {
                 String name = cursor1.getString(cursor1.getColumnIndex("name"));
                 String age = cursor1.getString(cursor1.getColumnIndex("age"));
                 String sex = cursor1.getString(cursor1.getColumnIndex("sex"));
-                String major= cursor1.getString(cursor1.getColumnIndex("major"));
-                if(number.equals(xuehao)){
+                String major = cursor1.getString(cursor1.getColumnIndex("major"));
+                if (number.equals(xuehao)) {
                     name1.setText(name);
                     sex1.setText(sex);
                     age1.setText(age);
@@ -121,17 +122,20 @@ public class HomeFragment extends Fragment {
         Cursor cursor2 = db.query("INFORMATION", null, null, null, null, null, null);
         if (cursor2.moveToFirst()) {
             do {
-                HashMap<String, String> map = new HashMap<String, String>();
+
                 String number = cursor2.getString(cursor2.getColumnIndex("number"));
                 String shetuan = cursor2.getString(cursor2.getColumnIndex("shetuan_1"));
-                if(number.equals(xuehao)){
-                    String[] result = shetuan.split(",");
-                    for (int i = 0; i < result.length; i++) {
+                if (shetuan == null) {
+                    shetuan = "";
+                }
+                if (number.equals(xuehao)) {
+                    String[] result = shetuan.split(",|null");
+                    for (int i = 1; i < result.length; i++) {
+                        HashMap<String, String> map = new HashMap<String, String>();
                         System.out.println(result[i]);
                         map.put("shetuan", result[i]);
                         retList.add(map);
                     }
-
                 }
 
             } while (cursor2.moveToNext());

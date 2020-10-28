@@ -1,4 +1,4 @@
-package com.example.myfinalwork.jitashe;
+package com.example.myfinalwork.Dance;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,12 +14,13 @@ import android.widget.TextView;
 
 import com.example.myfinalwork.DBHelper;
 import com.example.myfinalwork.R;
+import com.example.myfinalwork.jitashe.GuanzhuOrNot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Jita_chengyuanzongji extends AppCompatActivity {
+public class Dance_chengyuanzongji extends AppCompatActivity {
     List<HashMap<String, String>> retList = new ArrayList<HashMap<String, String>>();
     ListView mylistview;
     private DBHelper dbHelper;
@@ -28,17 +29,16 @@ public class Jita_chengyuanzongji extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jita_chengyuanzongji);
-
-//与页面布局文件中的listview关联
+        setContentView(R.layout.activity_dance_chengyuanzongji);
+        //与页面布局文件中的listview关联
         mylistview = (ListView) findViewById(R.id.mylistview);
 
         //创建个人信息数据库
         dbHelper = new DBHelper(this, "MyFinalWork.db", null, 1);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-int count=0;
+        int count=0;
         //将所有数据库中的信息取出存入成员名单retList中在listview逐条中显示
-        Cursor cursor1 = db.query("JITA_INFORMATION", null, null, null, null, null, null);
+        Cursor cursor1 = db.query("DANCE_INFORMATION", null, null, null, null, null, null);
         if (cursor1.moveToFirst()) {
             do {
                 HashMap<String, String> map = new HashMap<String, String>();
@@ -50,7 +50,7 @@ int count=0;
                 count++;
             } while (cursor1.moveToNext());
         }
-        listItemAdapter = new SimpleAdapter(Jita_chengyuanzongji.this, retList, //listItem数据源
+        listItemAdapter = new SimpleAdapter(Dance_chengyuanzongji.this, retList, //listItem数据源
                 R.layout.list_chengyuan,
                 //ListItem的XML布局实现
                 new String[]{"name", "number"},
@@ -64,16 +64,14 @@ int count=0;
         TextView chengyuan=findViewById(R.id.textView22);
         count1=String.valueOf(count);
         chengyuan.setText(count1);
-//返回吉他社主页面
+//返回舞蹈社主页面
         Button fanhui=findViewById(R.id.fanhui3);
         fanhui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Jita_chengyuanzongji.this, GuanzhuOrNot.class);
+                Intent intent=new Intent(Dance_chengyuanzongji.this, GuanzhuOrNot_Dance.class);
                 startActivity(intent);
             }
         });
     }
-
-
 }

@@ -33,17 +33,20 @@ public class Test_1 extends AppCompatActivity {
                         "sex text,"+
                         "age text,"+
                         "major text,"+
-                        "shetuan_1 text,"+
-                        "zhiwei_1 text,"+
-                        "shetuan_2 text,"+
-                        "zhiwei_2 text,"+
-                        "shetuan_3 text,"+
-                        "zhiwei_3 text)");
+                        "shetuan_1 text)");
                 db.execSQL("create table LOGIN("+
                         "id integer primary key autoincrement,"+
                         "number text NOT NULL UNIQUE,"+
                         "password text)");
                 db.execSQL("create table JITA_INFORMATION("+
+                        "id integer primary key autoincrement,"+
+                        "number text NOT NULL UNIQUE,"+
+                        "name text)");
+                db.execSQL("create table PIANO_INFORMATION("+
+                        "id integer primary key autoincrement,"+
+                        "number text NOT NULL UNIQUE,"+
+                        "name text)");
+                db.execSQL("create table DANCE_INFORMATION("+
                         "id integer primary key autoincrement,"+
                         "number text NOT NULL UNIQUE,"+
                         "name text)");
@@ -58,12 +61,19 @@ public class Test_1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase db=dbHelper.getWritableDatabase();
-                ContentValues values=new ContentValues();
+//                ContentValues values=new ContentValues();
                 //  db.execSQL("insert into LOGIN(number,password) values(?, ?)", new Object[]{"41710075", "123456"});
 //                db.execSQL("drop table INFORMATION");
-                values.put("number","3");
-                values.put("password","123456");
-                db.insert("LOGIN",null,values);
+//                values.put("number","1");
+//                values.put("password","123456");
+//                values.put("number","2");
+//                values.put("password","123456");
+//                values.put("number","3");
+//                values.put("password","123456");
+//                db.insert("LOGIN",null,values);
+                db.execSQL("insert into LOGIN(number,password) values(?, ?)", new Object[]{"1","123456"});
+                db.execSQL("insert into LOGIN(number,password) values(?, ?)", new Object[]{"2","123456"});
+                db.execSQL("insert into LOGIN(number,password) values(?, ?)", new Object[]{"3","123456"});
                 db.close();
             }
         });
@@ -76,6 +86,9 @@ public class Test_1 extends AppCompatActivity {
                 ContentValues values=new ContentValues();
                 db.execSQL("drop table INFORMATION");
                 db.execSQL("drop table LOGIN");
+                db.execSQL("drop table JITA_INFORMATION");
+                db.execSQL("drop table PIANO_INFORMATION");
+                db.execSQL("drop table DANCE_INFORMATION");
                 db.close();
             }
         });
@@ -84,6 +97,7 @@ public class Test_1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase db= dbHelper.getWritableDatabase();
+                //查看登录表信息
                 Cursor cursor=db.query("LOGIN",null,null,null,null,null,null);
                 if(cursor.moveToFirst()){
                     do{
@@ -93,6 +107,7 @@ public class Test_1 extends AppCompatActivity {
                         Log.d("SQLiteTest","password is:"+password);
                     }while(cursor.moveToNext());
                 }
+                //看个人信息表信息
                 Cursor cursor1=db.query("INFORMATION",null,null,null,null,null,null);
                 if(cursor1.moveToFirst()){
                     do{
@@ -108,16 +123,35 @@ public class Test_1 extends AppCompatActivity {
                         Log.d("SQLiteTest","INFORMATION_major is:"+major);
                     }while(cursor1.moveToNext());
                 }
+                //看吉他社成员信息
                 Cursor cursor2=db.query("JITA_INFORMATION",null,null,null,null,null,null);
                 if(cursor2.moveToFirst()){
                     do{
                         String number=cursor2.getString(cursor2.getColumnIndex("number"));
                         String name=cursor2.getString(cursor2.getColumnIndex("name"));
-
                         Log.d("SQLiteTest","JITA_INFORMATION_number is:"+number);
                         Log.d("SQLiteTest","JITA_INFORMATION_name is:"+name);
-
                     }while(cursor2.moveToNext());
+                }
+                //看钢琴社成员信息
+                Cursor cursor3=db.query("PIANO_INFORMATION",null,null,null,null,null,null);
+                if(cursor3.moveToFirst()){
+                    do{
+                        String number=cursor3.getString(cursor3.getColumnIndex("number"));
+                        String name=cursor3.getString(cursor3.getColumnIndex("name"));
+                        Log.d("SQLiteTest","PIANO_INFORMATION_number is:"+number);
+                        Log.d("SQLiteTest","PIANO_INFORMATION_name is:"+name);
+                    }while(cursor3.moveToNext());
+                }
+                //看舞蹈社成员信息
+                Cursor cursor4=db.query("DANCE_INFORMATION",null,null,null,null,null,null);
+                if(cursor4.moveToFirst()){
+                    do{
+                        String number=cursor4.getString(cursor4.getColumnIndex("number"));
+                        String name=cursor4.getString(cursor4.getColumnIndex("name"));
+                        Log.d("SQLiteTest","DANCE_INFORMATION_number is:"+number);
+                        Log.d("SQLiteTest","DANCE_INFORMATION_name is:"+name);
+                    }while(cursor4.moveToNext());
                 }
             }
 
