@@ -61,16 +61,6 @@ public class Test_1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase db=dbHelper.getWritableDatabase();
-//                ContentValues values=new ContentValues();
-                //  db.execSQL("insert into LOGIN(number,password) values(?, ?)", new Object[]{"41710075", "123456"});
-//                db.execSQL("drop table INFORMATION");
-//                values.put("number","1");
-//                values.put("password","123456");
-//                values.put("number","2");
-//                values.put("password","123456");
-//                values.put("number","3");
-//                values.put("password","123456");
-//                db.insert("LOGIN",null,values);
                 db.execSQL("insert into LOGIN(number,password) values(?, ?)", new Object[]{"1","123456"});
                 db.execSQL("insert into LOGIN(number,password) values(?, ?)", new Object[]{"2","123456"});
                 db.execSQL("insert into LOGIN(number,password) values(?, ?)", new Object[]{"3","123456"});

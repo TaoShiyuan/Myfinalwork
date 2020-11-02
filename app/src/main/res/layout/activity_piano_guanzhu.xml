@@ -7,14 +7,23 @@
     tools:context=".jitashe.Jita_guanzhu">
 
 
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background" />
+
     <Button
         android:id="@+id/fanhui"
         android:layout_width="87dp"
-        android:layout_height="38dp"
+        android:layout_height="35dp"
         android:layout_marginStart="-2dp"
         android:layout_marginLeft="-2dp"
-        android:layout_marginTop="8dp"
+        android:background="#C8FFFFFF"
         android:text="返回"
+        android:textColor="#040E47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="650dp"
         android:layout_marginLeft="650dp"
-        android:layout_marginTop="990dp"
+        android:layout_marginTop="988dp"
         android:text="1"
         android:textColor="#E603A9F4"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
@@ -50,7 +59,7 @@
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="wrap_content"
-            android:background="#FFFFFF"
+            android:background="#00FFFFFF"
             app:srcCompat="@drawable/shetuan_beijing" />
 
     </TableRow>
@@ -59,7 +68,7 @@
         android:id="@+id/textView4"
         android:layout_width="47dp"
         android:layout_height="23dp"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="210dp"
         android:background="#00070100"
         android:text="已关注"
         android:textColor="#FFFFFF"
@@ -74,9 +83,9 @@
         android:layout_marginStart="350dp"
         android:layout_marginLeft="350dp"
         android:layout_marginTop="280dp"
-        android:background="#F063D867"
+        android:background="#E235D3C1"
         android:text="已注册"
-        android:textColor="#F6F3F3"
+        android:textColor="#9CFFFFFF"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -85,7 +94,7 @@
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="200dp"
         android:background="#00070100"
         android:src="@android:drawable/btn_star_big_on"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,14 +114,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="280dp"
             android:text="钢琴社"
-            android:textColor="#000000"
+            android:textColor="#040E47"
             android:textSize="25sp" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="学生社团 指导单位： 会计学院" />
+            android:text="学生社团 指导单位： 人文学院" />
 
         <EditText
             android:id="@+id/editTextTextMultiLine"
@@ -121,13 +130,14 @@
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine"
-            android:text="社团活动主要围绕键盘类乐器演奏及交流。该社团多次参与学校重要艺术活动，如，新年音乐会、社团文化节、双周学生艺术专场、国庆通宵活动、区市级艺术活动及比赛等，为学校文化建设做出了突出的贡献" />
+            android:text="社团活动主要围绕键盘类乐器演奏及交流。该社团多次参与学校重要艺术活动，如，新年音乐会、社团文化节、双周学生艺术专场、国庆通宵活动、区市级艺术活动及比赛等，为学校文化建设做出了突出的贡献"
+            android:textColor="#040E47" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
+            android:background="#00FFFFFF"
             android:text="成员                                                              在校成员:"
             android:textColor="#DA03A9F4"
             android:textSize="14sp"
@@ -139,18 +149,19 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="72dp"
-                android:layout_height="103dp"
+                android:id="@+id/imageView10"
+                android:layout_width="61dp"
+                android:layout_height="58dp"
                 android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:srcCompat="@drawable/teacher1" />
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="王明"
+                android:text="王洋"
+                android:textColor="#040E47"
                 android:textSize="14sp" />
 
             <TextView
@@ -158,85 +169,63 @@
                 android:layout_width="wrap_content"
                 android:layout_height="12dp"
                 android:layout_weight="1"
-                android:background="#F063D867"
+                android:background="#E235D3C1"
                 android:text="指导老师"
-                android:textColor="#FFFFFF"
-                android:textSize="8sp"
+                android:textColor="#9CFFFFFF"
+                android:textSize="10sp"
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="72dp"
-                android:layout_height="103dp"
+                android:id="@+id/imageView12"
+                android:layout_width="61dp"
+                android:layout_height="58dp"
                 android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:srcCompat="@drawable/teacher1" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="王明" />
+                android:text="蒋刚"
+                android:textColor="#040E47" />
 
             <TextView
                 android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#F063D867"
+                android:background="#E235D3C1"
                 android:text="指导老师"
-                android:textColor="#FFFFFF"
-                android:textSize="8sp"
+                android:textColor="#9CFFFFFF"
+                android:textSize="10sp"
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="72dp"
-                android:layout_height="103dp"
+                android:id="@+id/imageView13"
+                android:layout_width="61dp"
+                android:layout_height="58dp"
                 android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:srcCompat="@drawable/teacher1" />
 
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="黎明" />
+                android:text="王小明"
+                android:textColor="#040E47" />
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#F063D867"
+                android:background="#E235D3C1"
                 android:text="社长"
-                android:textColor="#FFFFFF"
-                android:textSize="8sp"
+                android:textColor="#9CFFFFFF"
+                android:textSize="10sp"
                 android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="208dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="动态"
-                android:textColor="#E103A9F4" />
-
-            <Button
-                android:id="@+id/button8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:text="活动"
-                android:textColor="#D803A9F4" />
-
         </LinearLayout>
 
     </LinearLayout>

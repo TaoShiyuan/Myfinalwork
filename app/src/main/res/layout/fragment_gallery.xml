@@ -21,6 +21,14 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="@+id/linearLayout3" />-->
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="0dp"
@@ -79,28 +87,41 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="40dp">
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp">
 
                 <TextView
                     android:id="@+id/jitashe"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="50dp"
-                    android:text="吉他社" />
+                    android:text="吉他社"
+                    android:textColor="#040E47"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/wudaoshe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:text="舞蹈社" />
+                    android:text="舞蹈社"
+                    android:textColor="#040E47"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/gangqinshe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="60dp"
-                    android:text="钢琴社" />
+                    android:text="钢琴社"
+                    android:textColor="#040E47"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="18sp" />
             </TableRow>
 
             <TableRow

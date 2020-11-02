@@ -6,11 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".jitashe.Jita_chengyuanzongji">
 
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background" />
+
     <Button
         android:id="@+id/fanhui3"
         android:layout_width="87dp"
-        android:layout_height="38dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="-2dp"
+        android:layout_marginLeft="-2dp"
+        android:background="#C8FFFFFF"
         android:text="返回"
+        android:textColor="#040E47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,6 +95,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="#040E47"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:text="1" />
 
         </LinearLayout>
@@ -97,6 +112,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="#040E47"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorLink="#FFFFFF"
                 android:text="成员总计" />
 
         </LinearLayout>
@@ -109,7 +127,31 @@
             android:text="总成员名单"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#040E47"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                android:text="姓名" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#040E47"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                android:text="学号" />
+        </LinearLayout>
         <ListView
             android:id="@+id/mylistview"
             android:layout_width="match_parent"
