@@ -12,6 +12,7 @@
         android:id="@+id/imageView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background" />
@@ -71,7 +72,7 @@
         android:layout_height="23dp"
         android:layout_marginTop="210dp"
         android:background="#00070100"
-        android:text="已关注"
+        android:text="未加入"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
@@ -97,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:background="#00070100"
-        android:src="@android:drawable/btn_star_big_on"
+        android:src="@android:drawable/btn_star_big_off"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

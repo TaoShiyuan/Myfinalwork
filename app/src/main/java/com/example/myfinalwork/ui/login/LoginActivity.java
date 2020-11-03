@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
     private DBHelper dbHelper;
     EditText usernameEditText;
     EditText passwordEditText;
-
+int flag=0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -170,7 +170,7 @@ public class LoginActivity extends AppCompatActivity {
 //                                "id integer primary key autoincrement,"+
 //                                "shetuan text NOT NULL UNIQUE)");
                         db1.close();
-                        break;
+                        flag=1;
                     } else {
                         Intent intent = new Intent(this, LoginActivity.class);
                         startActivity(intent);
@@ -180,6 +180,11 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("SQLiteTest", "number is:" + number);
                 Log.d("SQLiteTest", "password is:" + password);
             } while (cursor.moveToNext());
+        }
+        if(flag==0){
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            Toast.makeText(getApplicationContext(), "用户不存在，请重新输入", Toast.LENGTH_LONG).show();
         }
 
     }

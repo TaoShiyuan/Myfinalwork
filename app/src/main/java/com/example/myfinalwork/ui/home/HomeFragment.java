@@ -100,6 +100,16 @@ public class HomeFragment extends Fragment {
                     sex1.setText(sex);
                     age1.setText(age);
                     major1.setText(major);
+                    if(sex==null){
+                        touxiang.setImageDrawable(getResources().getDrawable((R.drawable.nosex)));
+                    }
+                   else if(sex.equals("男")){
+                        touxiang.setImageDrawable(getResources().getDrawable((R.drawable.boy)));
+                    }
+                    else if(sex.equals("女")){
+                        touxiang.setImageDrawable(getResources().getDrawable((R.drawable.girl)));
+                    }
+
                 }
             } while (cursor1.moveToNext());
         }
