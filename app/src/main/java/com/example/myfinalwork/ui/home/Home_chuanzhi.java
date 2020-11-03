@@ -60,7 +60,13 @@ public class Home_chuanzhi extends FragmentActivity {
         Major.setText(major1);
         Age.setText(age1);
         touxiang = findViewById(R.id.imageView2);
-        touxiang.setImageDrawable(getResources().getDrawable((R.drawable.touxiang)));//头像未传递到更新页面
+        if(sex1.equals("男")){
+            touxiang.setImageDrawable(getResources().getDrawable((R.drawable.boy)));
+        }
+        else if(sex1.equals("女")){
+            touxiang.setImageDrawable(getResources().getDrawable((R.drawable.girl)));
+        }
+        //touxiang.setImageDrawable(getResources().getDrawable((R.drawable.touxiang)));
         //连接数据库
         dbHelper = new DBHelper(this, "MyFinalWork.db", null, 1);
         SQLiteDatabase db2 = dbHelper.getWritableDatabase();
